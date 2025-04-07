@@ -1,0 +1,292 @@
+/* LUNEXA Nonprofit Brand Styles */
+:root {
+    --primary: #4c1d95; /* Deep purple */
+    --secondary: #7e22ce; /* Royal purple */
+    --accent: #a855f7; /* Light purple */
+    --light: #f5f3ff; /* Lightest purple */
+    --nonprofit-blue: #2563eb; /* Trust blue */
+    --nonprofit-green: #059669; /* Success green */
+    --nonprofit-pink: #db2777; /* Action pink */
+}
+
+/* Accessibility Focus Styles */
+*:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only.focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: initial;
+    margin: initial;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Nonprofit Specific Styles */
+.nonprofit-badge {
+    background-color: var(--nonprofit-green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.donate-btn {
+    background-color: var(--nonprofit-pink);
+    transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+    background-color: #be185d;
+    transform: translateY(-2px);
+}
+
+/* Futuristic Effects */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+    transition: all 0.5s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
+}
+
+/* Holographic Team Cards */
+.leader-card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(255, 255, 255, 0.2));
+}
+
+.leader-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(124, 58, 237, 0),
+        rgba(124, 58, 237, 0),
+        rgba(202, 191, 255, 0.3),
+        rgba(124, 58, 237, 0)
+    );
+    transform: rotate(30deg);
+    animation: hologram 6s linear infinite;
+}
+
+@keyframes hologram {
+    0% { transform: rotate(30deg) translate(-30%, -30%); }
+    100% { transform: rotate(30deg) translate(30%, 30%); }
+}
+
+/* Animated Gradient Background */
+.futuristic-bg {
+    background: linear-gradient(-45deg, #4c1d95, #7e22ce, #a855f7, #d8b4fe);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particle Effects */
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-particle 15s infinite linear;
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+    }
+    100% {
+        transform: translateY(-200px) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Neon Effects */
+.neon-hover {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.neon-hover::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, 
+        #ff00cc, #3333ff, #00ccff, #ff00cc);
+    background-size: 400%;
+    border-radius: 9999px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.neon-hover:hover::before {
+    opacity: 1;
+    animation: neon-glow 3s linear infinite;
+}
+
+@keyframes neon-glow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Leadership Section Styles */
+.leader-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.leader-image {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 9999px;
+    margin: 0 auto 1rem;
+    object-fit: cover;
+    border: 0.25rem solid #e9d5ff;
+}
+
+/* Modern Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Enhancements */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-1rem); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #1e1b4b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #4c1d95;
+    line-height: 1.2;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Button animations */
+.btn-animate {
+    transition: all 0.3s ease;
+}
+
+.btn-animate:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
